@@ -47,7 +47,7 @@ inline bool in_bounds(minecraft::ChunkPos chunk, int edge) {
     return x + 8 >= -edge && x < edge && z + 8 >= -edge && z < edge;
 }
 
-constexpr unsigned max_top = 1000;
+constexpr int min_floor_limit = -63, max_floor_limit = 322;
 
 struct Hut {
     minecraft::BlockPos point;             // The floor: footprint anchor at the average ground height plus one.
@@ -56,22 +56,23 @@ struct Hut {
 };
 
 struct Result {
-    std::vector<Hut> huts;  // The lowest floors found, ascending by y; equal floors keep the order they were found.
+    std::vector<Hut> huts;  // All floors below the limit; progress snapshots and the final result are sorted by y.
     std::uint64_t regions = 0, candidates = 0, filtered = 0, bounded = 0, heights = 0, unknown = 0;
     std::uint64_t tiles_skipped = 0, regions_skipped = 0, proxy_rejected = 0, direct_bounded = 0;
     std::uint64_t floor_preview_rejected = 0;
     bool scan_complete = false;
 };
 
-// Keeps the top lowest huts. Pruning rejects whatever cannot beat the top-th floor, so a larger top screens less.
-inline Result search(std::uint64_t seed, int edge, unsigned workers, unsigned top, const std::function<bool()>& stop = {},
+// Keeps every hut strictly below floor_limit, using that fixed limit for terrain pruning.
+inline Result search(std::uint64_t seed, int edge, unsigned workers, int floor_limit, const std::function<bool()>& stop = {},
                      const std::function<void(const Result&, std::uint64_t)>& progress = {}) {
     const auto* set = minecraft::structure::find_set("minecraft:swamp_huts");
     if (!set || set->structure_id != "minecraft:swamp_hut" ||
         set->placement.spacing != 32 || set->placement.separation != 8 || set->placement.salt != 14357620)
         throw std::runtime_error("Unsupported swamp hut placement profile");
-    if (edge < 1 || edge > world_edge || workers < 1 || workers > 256 || top < 1 || top > max_top)
-        throw std::invalid_argument("Invalid border, worker count or result count");
+    if (edge < 1 || edge > world_edge || workers < 1 || workers > 256 ||
+        floor_limit < min_floor_limit || floor_limit > max_floor_limit)
+        throw std::invalid_argument("Invalid border, worker count or floor limit");
 
     const int first = minecraft::floor_div(minecraft::floor_div(7 - edge, 16), 32);
     const int last = minecraft::floor_div(minecraft::floor_div(edge - 1, 16), 32);
@@ -80,17 +81,22 @@ inline Result search(std::uint64_t seed, int edge, unsigned workers, unsigned to
     const int first_tile = minecraft::floor_div(first, tile_width), last_tile = minecraft::floor_div(last, tile_width);
     const std::uint64_t tile_side = total ? last_tile - first_tile + 1 : 0, total_tiles = tile_side * tile_side;
     std::atomic<std::uint64_t> next{0};
-    // A hut enters the results only with a floor strictly below this: the top-th floor once that many are known.
-    std::atomic<int> cutoff{322};
     std::atomic<unsigned> running{workers};
     std::atomic<bool> cancelled{false};
     std::mutex mutex;
     std::condition_variable finished;
     Result result;
     std::exception_ptr error;
+    const auto lower_floor = [](const Hut& a, const Hut& b) { return a.point.y < b.point.y; };
+    // shortcut: snapshots copy and sort all hits, use incremental reports if large result sets dominate runtime.
     const auto snapshot = [&] {
-        const std::lock_guard lock(mutex);
-        return result;
+        Result copy;
+        {
+            const std::lock_guard lock(mutex);
+            copy = result;
+        }
+        std::stable_sort(copy.huts.begin(), copy.huts.end(), lower_floor);
+        return copy;
     };
     const auto add = [](Result& to, const Result& from) {
         to.regions += from.regions;
@@ -180,7 +186,7 @@ inline Result search(std::uint64_t seed, int edge, unsigned workers, unsigned to
                         ++local.filtered;
                         continue;
                     }
-                    const int incumbent = cutoff.load(std::memory_order_relaxed);
+                    const int incumbent = floor_limit;
                     if (incumbent >= -63 && incumbent < 312) {
                         minecraft::worldgen::DensitySampler::ColumnScope scope(density, x, z);
                         // The climate filter just sampled the flat-cached climate at this quart.
@@ -202,7 +208,7 @@ inline Result search(std::uint64_t seed, int edge, unsigned workers, unsigned to
                         continue;
                     // Every check here only rejects, so the cheap probed preview may run before the full
                     // generation-height scan without changing which huts survive.
-                    if (floors.preview_rejects(chunk, cutoff.load(std::memory_order_relaxed))) {
+                    if (floors.preview_rejects(chunk, floor_limit)) {
                         ++local.floor_preview_rejected;
                         continue;
                     }
@@ -211,7 +217,7 @@ inline Result search(std::uint64_t seed, int edge, unsigned workers, unsigned to
                     const auto match = biomes.matches(minecraft::to_quart(minecraft::BlockPos{x, y, z}), swamp);
                     if (match && !*match)
                         continue;
-                    const auto inspected = floors.inspect(chunk, cutoff.load(std::memory_order_relaxed));
+                    const auto inspected = floors.inspect(chunk, floor_limit);
                     if (!inspected.floor) {
                         ++local.bounded;
                         continue;
@@ -219,19 +225,9 @@ inline Result search(std::uint64_t seed, int edge, unsigned workers, unsigned to
                     const auto& floor = *inspected.floor;
                     if (!match || floor.uncertain)
                         ++local.unknown;
-                    if (match && *match) {
+                    if (match && *match && floor.point.y < floor_limit) {
                         const std::lock_guard lock(mutex);
-                        auto& huts = result.huts;
-                        if (huts.size() < top || floor.point.y < huts.back().point.y) {
-                            const auto at = std::upper_bound(
-                                huts.begin(), huts.end(), floor.point.y,
-                                [](int floor_y, const Hut& hut) { return floor_y < hut.point.y; });
-                            huts.insert(at, Hut{floor.point, minecraft::BlockPos{x, y, z}, floor.uncertain});
-                            if (huts.size() > top)
-                                huts.pop_back();
-                            if (huts.size() == top)
-                                cutoff.store(huts.back().point.y, std::memory_order_relaxed);
-                        }
+                        result.huts.push_back(Hut{floor.point, minecraft::BlockPos{x, y, z}, floor.uncertain});
                     }
                 }
                 add(pending, local);
@@ -275,6 +271,7 @@ inline Result search(std::uint64_t seed, int edge, unsigned workers, unsigned to
         thread.join();
     if (error)
         std::rethrow_exception(error);
+    std::stable_sort(result.huts.begin(), result.huts.end(), lower_floor);
     result.scan_complete = result.regions == total;
     return result;
 }

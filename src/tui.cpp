@@ -41,7 +41,7 @@ const Color rose = Color::RGB(247, 118, 142);
 const Color muted = Color::RGB(118, 124, 148);
 const Color line = Color::RGB(65, 72, 104);
 
-constexpr unsigned default_top = 1;
+constexpr int default_floor_limit = -32;
 
 std::string grouped(std::int64_t value) {
     auto digits = std::to_string(value < 0 ? -value : value);
@@ -153,7 +153,7 @@ struct Scan {
     std::uint64_t seed = 0;
     int edge = witch_hut::world_edge;
     unsigned workers = 1;
-    unsigned top = default_top;
+    int floor_limit = default_floor_limit;
     Clock::time_point started = Clock::now();
 
     std::mutex mutex;
@@ -195,7 +195,7 @@ struct Scan {
             }
         };
         try {
-            const auto final = witch_hut::search(seed, edge, workers, top, [this] { return stop.load(); }, record);
+            const auto final = witch_hut::search(seed, edge, workers, floor_limit, [this] { return stop.load(); }, record);
             record(final, 0);
         } catch (const std::exception& failure) {
             const std::lock_guard lock(mutex);
@@ -371,11 +371,11 @@ Element uncertainty(bool uncertain) {
     return uncertain ? text("  ▲") | color(amber) : text("   ");
 }
 
-// Columns: rank, floor y, [witch y], x, z, [chunk], found. full adds the bracketed ones, which follow from the rest.
-Element ranking_panel(const Scan* scan, const View* view, unsigned top, bool full) {
-    const auto row = [&](std::string rank, std::string floor, std::string witch, std::string x, std::string z,
+// Columns: row number, floor y, [witch y], x, z, [chunk], found. full adds the bracketed ones, which follow from the rest.
+Element results_panel(const Scan* scan, const View* view, int floor_limit, bool full, std::size_t first_row, std::size_t page_size) {
+    const auto row = [&](std::string number, std::string floor, std::string witch, std::string x, std::string z,
                          std::string chunk, Element found) {
-        Elements cells{cell(std::move(rank), 4), cell(std::move(floor), 9)};
+        Elements cells{cell(std::move(number), 4), cell(std::move(floor), 9)};
         if (full)
             cells.push_back(cell(std::move(witch), 9));
         cells.push_back(cell(std::move(x), 11));
@@ -387,7 +387,8 @@ Element ranking_panel(const Scan* scan, const View* view, unsigned top, bool ful
     };
     Elements rows{hbox({row("#", "floor y", "witch y", "x", "z", "chunk", text("found")), uncertainty(false)}) |
                   color(muted)};
-    const auto& huts = scan ? view->result.huts : std::vector<witch_hut::Hut>{};
+    static const std::vector<witch_hut::Hut> empty;
+    const auto& huts = scan ? view->result.huts : empty;
     const auto found_at = [&](const witch_hut::Hut& hut) {
         const auto it = view->found.find({hut.point.x, hut.point.z});
         return it == view->found.end() ? -1.0 : it->second;
@@ -396,7 +397,8 @@ Element ranking_panel(const Scan* scan, const View* view, unsigned top, bool ful
     double newest = -1;
     for (const auto& hut : huts)
         newest = std::max(newest, found_at(hut));
-    for (std::size_t i = 0; i < huts.size(); ++i) {
+    const auto end_row = std::min(huts.size(), first_row + page_size);
+    for (std::size_t i = first_row; i < end_row; ++i) {
         const auto& p = huts[i].point;
         const double seconds = found_at(huts[i]);
         auto found = text(seconds < 0 ? "" : duration(seconds)) | color(seconds == newest ? accent : muted);
@@ -408,8 +410,10 @@ Element ranking_panel(const Scan* scan, const View* view, unsigned top, bool ful
         rows.push_back(hbox({line, uncertainty(huts[i].height_uncertain)}));
     }
     if (huts.empty())
-        rows.push_back(paragraph(std::format("The {} lowest huts found will be listed here.", top)) | color(muted));
-    const auto title = scan ? std::format("Lowest {}  ·  {} found", top, huts.size()) : std::format("Lowest {}", top);
+        rows.push_back(paragraph(std::format("All huts with floor y < {} will be listed here.", floor_limit)) | color(muted));
+    const auto title = scan ? std::format("Floor < {}  ·  {} found  ·  {}–{}", floor_limit, huts.size(),
+                                          huts.empty() ? 0 : first_row + 1, end_row)
+                            : std::format("Floor < {}", floor_limit);
     return panel(title, vbox(std::move(rows)) | yframe);
 }
 
@@ -468,8 +472,11 @@ Component field(std::string label, std::string* value, std::string placeholder, 
 
 int main() {
     const unsigned hardware = std::clamp(std::thread::hardware_concurrency(), 1U, 256U);
-    std::string seed_text, radius_text, threads_text, top_text;
+    std::string seed_text, radius_text, threads_text, floor_limit_text;
     std::string notice;
+    std::size_t first_row = 0;
+    Box results_box;
+    const auto page_size = [&] { return static_cast<std::size_t>(std::max(1, results_box.y_max - results_box.y_min - 2)); };
 
     auto screen = ScreenInteractive::Fullscreen();
     std::unique_ptr<Scan> scan;  // Declared after the screen, so its thread stops before the screen goes away.
@@ -480,16 +487,19 @@ int main() {
             return;
         const auto seed = minecraft::parse_seed(trim(seed_text));
         int edge = witch_hut::world_edge;
-        unsigned workers = hardware, top = default_top;
-        const auto radius = trim(radius_text), threads = trim(threads_text), count = trim(top_text);
+        unsigned workers = hardware;
+        int floor_limit = default_floor_limit;
+        const auto radius = trim(radius_text), threads = trim(threads_text), limit = trim(floor_limit_text);
         if (!seed)
             notice = "Seed must be a decimal signed 64-bit integer.";
         else if (!radius.empty() && !(parse(radius, edge) && edge >= 1 && edge <= witch_hut::world_edge))
             notice = std::format("Radius must be between 1 and {}.", grouped(witch_hut::world_edge));
         else if (!threads.empty() && !(parse(threads, workers) && workers >= 1 && workers <= 256))
             notice = "Threads must be between 1 and 256.";
-        else if (!count.empty() && !(parse(count, top) && top >= 1 && top <= witch_hut::max_top))
-            notice = std::format("Top must be between 1 and {}.", witch_hut::max_top);
+        else if (!limit.empty() && !(parse(limit, floor_limit) && floor_limit >= witch_hut::min_floor_limit &&
+                                         floor_limit <= witch_hut::max_floor_limit))
+            notice = std::format("Floor limit must be between {} and {}.", witch_hut::min_floor_limit,
+                                 witch_hut::max_floor_limit);
         else
             notice.clear();
         if (!notice.empty())
@@ -499,7 +509,8 @@ int main() {
         scan->seed = *seed;
         scan->edge = edge;
         scan->workers = workers;
-        scan->top = top;
+        scan->floor_limit = floor_limit;
+        first_row = 0;
         scan->thread = std::jthread([&screen, s = scan.get()] {
             s->run();
             screen.PostEvent(Event::Custom);
@@ -513,7 +524,7 @@ int main() {
     auto seed_field = field("Seed", &seed_text, "e.g. 42", 0, start, running);
     auto radius_field = field("Radius", &radius_text, "world", 14, start, running);
     auto threads_field = field("Threads", &threads_text, std::to_string(hardware), 11, start, running);
-    auto top_field = field("Top", &top_text, std::to_string(default_top), 9, start, running);
+    auto floor_limit_field = field("Floor <", &floor_limit_text, std::to_string(default_floor_limit), 11, start, running);
     ButtonOption button_option;
     button_option.on_click = [&] { running() ? stop() : start(); };
     button_option.transform = [&](const EntryState& state) {
@@ -526,7 +537,7 @@ int main() {
     };
     auto button = Button(button_option);
 
-    auto controls = Container::Horizontal({seed_field, radius_field, threads_field, top_field, button});
+    auto controls = Container::Horizontal({seed_field, radius_field, threads_field, floor_limit_field, button});
     auto app = Renderer(controls, [&] {
         std::optional<View> view;
         if (scan)
@@ -546,6 +557,7 @@ int main() {
             key("tab", "next"),
             key("enter", "start"),
             key("esc", "stop"),
+            key("pgup/dn", "results"),
             key("ctrl-c", "quit"),
             filler(),
             text("estimates · fast screening may miss lower huts ") | color(muted) | xflex_shrink,
@@ -555,25 +567,39 @@ int main() {
             layout.push_back(text(" " + message) | color(rose));
         layout.push_back(progress_panel(scan.get(), v));
         layout.push_back(hbox({best_panel(scan.get(), v), funnel_panel(scan.get(), v)}));
-        unsigned top = default_top;
+        int floor_limit = default_floor_limit;
         if (scan)
-            top = scan->top;
-        else if (unsigned typed; parse(trim(top_text), typed) && typed >= 1 && typed <= witch_hut::max_top)
-            top = typed;
-        // The ranking keeps every column when the record lows fit beside it, drops the derived ones when only the
-        // two narrow tables fit side by side, and below that the record lows go under the ranking.
+            floor_limit = scan->floor_limit;
+        else if (int typed; parse(trim(floor_limit_text), typed) && typed >= witch_hut::min_floor_limit &&
+                           typed <= witch_hut::max_floor_limit)
+            floor_limit = typed;
+        // The results keep every column when the record lows fit beside it, drops the derived ones when only the
+        // two narrow tables fit side by side, and below that the record lows go under the results.
         const int width = Terminal::Size().dimx;
         const bool full = width >= 116;
-        auto ranking = ranking_panel(scan.get(), v, top, full);
+        if (v)
+            first_row = v->result.huts.empty() ? 0 : std::min(first_row, v->result.huts.size() - 1);
+        auto results = results_panel(scan.get(), v, floor_limit, full, first_row, page_size()) | reflect(results_box);
         auto records = records_panel(scan.get(), v);
         if (width >= 88)
-            layout.push_back(hbox({std::move(ranking), std::move(records) | flex}) | flex);
+            layout.push_back(hbox({std::move(results), std::move(records) | flex}) | flex);
         else
-            layout.push_back(vbox({std::move(ranking) | flex, std::move(records) | flex}) | flex);
+            layout.push_back(vbox({std::move(results) | flex, std::move(records) | flex}) | flex);
         layout.push_back(footer);
         return vbox(std::move(layout));
     });
     app |= CatchEvent([&](const Event& event) {
+        if (event == Event::PageUp || event == Event::PageDown) {
+            const auto step = page_size();
+            if (event == Event::PageUp)
+                first_row = first_row > step ? first_row - step : 0;
+            else if (scan) {
+                const std::lock_guard lock(scan->mutex);
+                if (!scan->result.huts.empty())
+                    first_row = std::min(first_row + step, scan->result.huts.size() - 1);
+            }
+            return true;
+        }
         if (event == Event::Escape) {
             stop();
             return true;

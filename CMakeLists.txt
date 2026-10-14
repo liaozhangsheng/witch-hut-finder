@@ -45,3 +45,10 @@ target_include_directories(minecraft_worldgen PUBLIC "${CMAKE_CURRENT_SOURCE_DIR
 add_executable(witch_hut_finder src/tui.cpp)
 target_link_libraries(witch_hut_finder PRIVATE minecraft_worldgen ftxui::component)
 set_target_properties(witch_hut_finder PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
+
+include(CTest)
+if(BUILD_TESTING)
+    add_executable(witch_hut_search_test tests/witch_hut_search_test.cpp)
+    target_link_libraries(witch_hut_search_test PRIVATE minecraft_worldgen)
+    add_test(NAME witch_hut_search_threshold COMMAND witch_hut_search_test)
+endif()
