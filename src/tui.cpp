@@ -134,7 +134,8 @@ Element meter(double fraction, Color fill = accent) {
 Element panel(std::string_view title, Element content, Color edge = line, Color heading = muted) {
     return dbox({
         std::move(content) | borderStyled(ROUNDED, edge),
-        hbox({text("╭") | color(edge), text(std::format(" {} ", title)) | bold | color(heading)}),
+        // Keep title styles on the top row instead of repainting the content below.
+        vbox({hbox({text("╭") | color(edge), text(std::format(" {} ", title)) | bold | color(heading)}), filler()}),
     });
 }
 

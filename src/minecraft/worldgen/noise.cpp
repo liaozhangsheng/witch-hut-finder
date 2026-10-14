@@ -457,10 +457,10 @@ double BlendedNoise::sample(const BlockPos position) const {
         if (octave && next) {
             const auto f = frequency, g = frequency / 2.0;
             const auto value =
-                PairKernel::sample(*octave, *next, {PerlinNoise::wrap(d3 * f), PerlinNoise::wrap(d3 * g)},
-                                   {PerlinNoise::wrap(d4 * f), PerlinNoise::wrap(d4 * g)},
-                                   {PerlinNoise::wrap(d5 * f), PerlinNoise::wrap(d5 * g)}, {d7 * f, d7 * g},
-                                   {d4 * f, d4 * g});
+                PairKernel::sample(*octave, *next, double2{PerlinNoise::wrap(d3 * f), PerlinNoise::wrap(d3 * g)},
+                                   double2{PerlinNoise::wrap(d4 * f), PerlinNoise::wrap(d4 * g)},
+                                   double2{PerlinNoise::wrap(d5 * f), PerlinNoise::wrap(d5 * g)}, double2{d7 * f, d7 * g},
+                                   double2{d4 * f, d4 * g});
             main_noise += value[0] / f;
             main_noise += value[1] / g;
             frequency = g / 2.0;
@@ -489,9 +489,9 @@ double BlendedNoise::sample(const BlockPos position) const {
 #ifdef MINECRAFT_PAIRED_OCTAVES
         // Both limits read the same coordinates at a given octave.
         if (min_octave && max_octave) {
-            const auto value = PairKernel::sample(*min_octave, *max_octave, {wrapped_x, wrapped_x},
-                                                  {wrapped_y, wrapped_y}, {wrapped_z, wrapped_z}, {y_scale, y_scale},
-                                                  {y_max, y_max});
+            const auto value = PairKernel::sample(*min_octave, *max_octave, double2{wrapped_x, wrapped_x},
+                                                  double2{wrapped_y, wrapped_y}, double2{wrapped_z, wrapped_z},
+                                                  double2{y_scale, y_scale}, double2{y_max, y_max});
             min_noise += value[0] / frequency;
             max_noise += value[1] / frequency;
             frequency /= 2.0;
