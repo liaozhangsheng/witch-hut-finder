@@ -1,0 +1,4881 @@
+{
+  "game_version": "26.1",
+  "source": "server-extracted.jar runtime registries; FeatureSorter order of the dimension\u0027s biome source",
+  "decoration_steps": [
+    "raw_generation",
+    "lakes",
+    "local_modifications",
+    "underground_structures",
+    "surface_structures",
+    "strongholds",
+    "underground_ores",
+    "underground_decoration",
+    "fluid_springs",
+    "vegetal_decoration",
+    "top_layer_modification"
+  ],
+  "placed_features": {
+    "minecraft:amethyst_geode": {
+      "type": "minecraft:geode",
+      "step": 2,
+      "index": 2,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "chance": 24,
+          "type": "minecraft:rarity_filter"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "above_bottom": 6
+            },
+            "max_inclusive": {
+              "absolute": 30
+            },
+            "type": "minecraft:uniform"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "blocks": {
+            "filling_provider": {
+              "state": {
+                "Name": "minecraft:air"
+              },
+              "type": "minecraft:simple_state_provider"
+            },
+            "inner_layer_provider": {
+              "state": {
+                "Name": "minecraft:amethyst_block"
+              },
+              "type": "minecraft:simple_state_provider"
+            },
+            "alternate_inner_layer_provider": {
+              "state": {
+                "Name": "minecraft:budding_amethyst"
+              },
+              "type": "minecraft:simple_state_provider"
+            },
+            "middle_layer_provider": {
+              "state": {
+                "Name": "minecraft:calcite"
+              },
+              "type": "minecraft:simple_state_provider"
+            },
+            "outer_layer_provider": {
+              "state": {
+                "Name": "minecraft:smooth_basalt"
+              },
+              "type": "minecraft:simple_state_provider"
+            },
+            "inner_placements": [
+              {
+                "Properties": {
+                  "waterlogged": "false",
+                  "facing": "up"
+                },
+                "Name": "minecraft:small_amethyst_bud"
+              },
+              {
+                "Properties": {
+                  "waterlogged": "false",
+                  "facing": "up"
+                },
+                "Name": "minecraft:medium_amethyst_bud"
+              },
+              {
+                "Properties": {
+                  "waterlogged": "false",
+                  "facing": "up"
+                },
+                "Name": "minecraft:large_amethyst_bud"
+              },
+              {
+                "Properties": {
+                  "waterlogged": "false",
+                  "facing": "up"
+                },
+                "Name": "minecraft:amethyst_cluster"
+              }
+            ],
+            "cannot_replace": "#minecraft:features_cannot_replace",
+            "invalid_blocks": "#minecraft:geode_invalid_blocks"
+          },
+          "layers": {
+            "filling": 1.7,
+            "inner_layer": 2.2,
+            "middle_layer": 3.2,
+            "outer_layer": 4.2
+          },
+          "crack": {
+            "generate_crack_chance": 0.95,
+            "base_crack_size": 2.0,
+            "crack_point_offset": 2
+          },
+          "use_potential_placements_chance": 0.35,
+          "use_alternate_layer0_chance": 0.083,
+          "placements_require_layer0_alternate": true,
+          "outer_wall_distance": {
+            "min_inclusive": 4,
+            "max_inclusive": 6,
+            "type": "minecraft:uniform"
+          },
+          "distribution_points": {
+            "min_inclusive": 3,
+            "max_inclusive": 4,
+            "type": "minecraft:uniform"
+          },
+          "point_offset": {
+            "min_inclusive": 1,
+            "max_inclusive": 2,
+            "type": "minecraft:uniform"
+          },
+          "min_gen_offset": -16,
+          "max_gen_offset": 16,
+          "noise_multiplier": 0.05,
+          "invalid_blocks_threshold": 1
+        },
+        "type": "minecraft:geode"
+      }
+    },
+    "minecraft:monster_room": {
+      "type": "minecraft:monster_room",
+      "step": 3,
+      "index": 2,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 10,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "absolute": 0
+            },
+            "max_inclusive": {
+              "below_top": 0
+            },
+            "type": "minecraft:uniform"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {},
+        "type": "minecraft:monster_room"
+      }
+    },
+    "minecraft:monster_room_deep": {
+      "type": "minecraft:monster_room",
+      "step": 3,
+      "index": 3,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 4,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "above_bottom": 6
+            },
+            "max_inclusive": {
+              "absolute": -1
+            },
+            "type": "minecraft:uniform"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {},
+        "type": "minecraft:monster_room"
+      }
+    },
+    "minecraft:ore_dirt": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 0,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 7,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "absolute": 0
+            },
+            "max_inclusive": {
+              "absolute": 160
+            },
+            "type": "minecraft:uniform"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:base_stone_overworld",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:dirt"
+              }
+            }
+          ],
+          "size": 33,
+          "discard_chance_on_air_exposure": 0.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_gravel": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 1,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 14,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "above_bottom": 0
+            },
+            "max_inclusive": {
+              "below_top": 0
+            },
+            "type": "minecraft:uniform"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:base_stone_overworld",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:gravel"
+              }
+            }
+          ],
+          "size": 33,
+          "discard_chance_on_air_exposure": 0.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_granite_upper": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 2,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "chance": 6,
+          "type": "minecraft:rarity_filter"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "absolute": 64
+            },
+            "max_inclusive": {
+              "absolute": 128
+            },
+            "type": "minecraft:uniform"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:base_stone_overworld",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:granite"
+              }
+            }
+          ],
+          "size": 64,
+          "discard_chance_on_air_exposure": 0.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_granite_lower": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 3,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 2,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "absolute": 0
+            },
+            "max_inclusive": {
+              "absolute": 60
+            },
+            "type": "minecraft:uniform"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:base_stone_overworld",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:granite"
+              }
+            }
+          ],
+          "size": 64,
+          "discard_chance_on_air_exposure": 0.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_diorite_upper": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 4,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "chance": 6,
+          "type": "minecraft:rarity_filter"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "absolute": 64
+            },
+            "max_inclusive": {
+              "absolute": 128
+            },
+            "type": "minecraft:uniform"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:base_stone_overworld",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:diorite"
+              }
+            }
+          ],
+          "size": 64,
+          "discard_chance_on_air_exposure": 0.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_diorite_lower": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 5,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 2,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "absolute": 0
+            },
+            "max_inclusive": {
+              "absolute": 60
+            },
+            "type": "minecraft:uniform"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:base_stone_overworld",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:diorite"
+              }
+            }
+          ],
+          "size": 64,
+          "discard_chance_on_air_exposure": 0.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_andesite_upper": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 6,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "chance": 6,
+          "type": "minecraft:rarity_filter"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "absolute": 64
+            },
+            "max_inclusive": {
+              "absolute": 128
+            },
+            "type": "minecraft:uniform"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:base_stone_overworld",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:andesite"
+              }
+            }
+          ],
+          "size": 64,
+          "discard_chance_on_air_exposure": 0.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_andesite_lower": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 7,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 2,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "absolute": 0
+            },
+            "max_inclusive": {
+              "absolute": 60
+            },
+            "type": "minecraft:uniform"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:base_stone_overworld",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:andesite"
+              }
+            }
+          ],
+          "size": 64,
+          "discard_chance_on_air_exposure": 0.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_tuff": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 8,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 2,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "above_bottom": 0
+            },
+            "max_inclusive": {
+              "absolute": 0
+            },
+            "type": "minecraft:uniform"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:base_stone_overworld",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:tuff"
+              }
+            }
+          ],
+          "size": 64,
+          "discard_chance_on_air_exposure": 0.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_coal_upper": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 9,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 30,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "absolute": 136
+            },
+            "max_inclusive": {
+              "below_top": 0
+            },
+            "type": "minecraft:uniform"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:stone_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:coal_ore"
+              }
+            },
+            {
+              "target": {
+                "tag": "minecraft:deepslate_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:deepslate_coal_ore"
+              }
+            }
+          ],
+          "size": 17,
+          "discard_chance_on_air_exposure": 0.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_coal_lower": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 10,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 20,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "absolute": 0
+            },
+            "max_inclusive": {
+              "absolute": 192
+            },
+            "type": "minecraft:trapezoid"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:stone_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:coal_ore"
+              }
+            },
+            {
+              "target": {
+                "tag": "minecraft:deepslate_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:deepslate_coal_ore"
+              }
+            }
+          ],
+          "size": 17,
+          "discard_chance_on_air_exposure": 0.5
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_iron_upper": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 11,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 90,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "absolute": 80
+            },
+            "max_inclusive": {
+              "absolute": 384
+            },
+            "type": "minecraft:trapezoid"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:stone_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:iron_ore"
+              }
+            },
+            {
+              "target": {
+                "tag": "minecraft:deepslate_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:deepslate_iron_ore"
+              }
+            }
+          ],
+          "size": 9,
+          "discard_chance_on_air_exposure": 0.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_iron_middle": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 12,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 10,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "absolute": -24
+            },
+            "max_inclusive": {
+              "absolute": 56
+            },
+            "type": "minecraft:trapezoid"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:stone_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:iron_ore"
+              }
+            },
+            {
+              "target": {
+                "tag": "minecraft:deepslate_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:deepslate_iron_ore"
+              }
+            }
+          ],
+          "size": 9,
+          "discard_chance_on_air_exposure": 0.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_iron_small": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 13,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 10,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "above_bottom": 0
+            },
+            "max_inclusive": {
+              "absolute": 72
+            },
+            "type": "minecraft:uniform"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:stone_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:iron_ore"
+              }
+            },
+            {
+              "target": {
+                "tag": "minecraft:deepslate_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:deepslate_iron_ore"
+              }
+            }
+          ],
+          "size": 4,
+          "discard_chance_on_air_exposure": 0.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_gold": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 14,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 4,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "absolute": -64
+            },
+            "max_inclusive": {
+              "absolute": 32
+            },
+            "type": "minecraft:trapezoid"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:stone_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:gold_ore"
+              }
+            },
+            {
+              "target": {
+                "tag": "minecraft:deepslate_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:deepslate_gold_ore"
+              }
+            }
+          ],
+          "size": 9,
+          "discard_chance_on_air_exposure": 0.5
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_gold_lower": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 15,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": {
+            "min_inclusive": 0,
+            "max_inclusive": 1,
+            "type": "minecraft:uniform"
+          },
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "absolute": -64
+            },
+            "max_inclusive": {
+              "absolute": -48
+            },
+            "type": "minecraft:uniform"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:stone_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:gold_ore"
+              }
+            },
+            {
+              "target": {
+                "tag": "minecraft:deepslate_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:deepslate_gold_ore"
+              }
+            }
+          ],
+          "size": 9,
+          "discard_chance_on_air_exposure": 0.5
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_redstone": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 16,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 4,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "above_bottom": 0
+            },
+            "max_inclusive": {
+              "absolute": 15
+            },
+            "type": "minecraft:uniform"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:stone_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Properties": {
+                  "lit": "false"
+                },
+                "Name": "minecraft:redstone_ore"
+              }
+            },
+            {
+              "target": {
+                "tag": "minecraft:deepslate_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Properties": {
+                  "lit": "false"
+                },
+                "Name": "minecraft:deepslate_redstone_ore"
+              }
+            }
+          ],
+          "size": 8,
+          "discard_chance_on_air_exposure": 0.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_redstone_lower": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 17,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 8,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "above_bottom": -32
+            },
+            "max_inclusive": {
+              "above_bottom": 32
+            },
+            "type": "minecraft:trapezoid"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:stone_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Properties": {
+                  "lit": "false"
+                },
+                "Name": "minecraft:redstone_ore"
+              }
+            },
+            {
+              "target": {
+                "tag": "minecraft:deepslate_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Properties": {
+                  "lit": "false"
+                },
+                "Name": "minecraft:deepslate_redstone_ore"
+              }
+            }
+          ],
+          "size": 8,
+          "discard_chance_on_air_exposure": 0.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_diamond": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 18,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 7,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "above_bottom": -80
+            },
+            "max_inclusive": {
+              "above_bottom": 80
+            },
+            "type": "minecraft:trapezoid"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:stone_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:diamond_ore"
+              }
+            },
+            {
+              "target": {
+                "tag": "minecraft:deepslate_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:deepslate_diamond_ore"
+              }
+            }
+          ],
+          "size": 4,
+          "discard_chance_on_air_exposure": 0.5
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_diamond_medium": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 19,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 2,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "absolute": -64
+            },
+            "max_inclusive": {
+              "absolute": -4
+            },
+            "type": "minecraft:uniform"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:stone_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:diamond_ore"
+              }
+            },
+            {
+              "target": {
+                "tag": "minecraft:deepslate_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:deepslate_diamond_ore"
+              }
+            }
+          ],
+          "size": 8,
+          "discard_chance_on_air_exposure": 0.5
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_diamond_large": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 20,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "chance": 9,
+          "type": "minecraft:rarity_filter"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "above_bottom": -80
+            },
+            "max_inclusive": {
+              "above_bottom": 80
+            },
+            "type": "minecraft:trapezoid"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:stone_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:diamond_ore"
+              }
+            },
+            {
+              "target": {
+                "tag": "minecraft:deepslate_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:deepslate_diamond_ore"
+              }
+            }
+          ],
+          "size": 12,
+          "discard_chance_on_air_exposure": 0.7
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_diamond_buried": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 21,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 4,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "above_bottom": -80
+            },
+            "max_inclusive": {
+              "above_bottom": 80
+            },
+            "type": "minecraft:trapezoid"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:stone_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:diamond_ore"
+              }
+            },
+            {
+              "target": {
+                "tag": "minecraft:deepslate_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:deepslate_diamond_ore"
+              }
+            }
+          ],
+          "size": 8,
+          "discard_chance_on_air_exposure": 1.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_lapis": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 22,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 2,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "absolute": -32
+            },
+            "max_inclusive": {
+              "absolute": 32
+            },
+            "type": "minecraft:trapezoid"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:stone_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:lapis_ore"
+              }
+            },
+            {
+              "target": {
+                "tag": "minecraft:deepslate_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:deepslate_lapis_ore"
+              }
+            }
+          ],
+          "size": 7,
+          "discard_chance_on_air_exposure": 0.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_lapis_buried": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 23,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:dripstone_caves",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 4,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "above_bottom": 0
+            },
+            "max_inclusive": {
+              "absolute": 64
+            },
+            "type": "minecraft:uniform"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:stone_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:lapis_ore"
+              }
+            },
+            {
+              "target": {
+                "tag": "minecraft:deepslate_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:deepslate_lapis_ore"
+              }
+            }
+          ],
+          "size": 7,
+          "discard_chance_on_air_exposure": 1.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_copper_large": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 24,
+      "biomes": [
+        "minecraft:dripstone_caves"
+      ],
+      "placement": [
+        {
+          "count": 16,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "absolute": -16
+            },
+            "max_inclusive": {
+              "absolute": 112
+            },
+            "type": "minecraft:trapezoid"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:stone_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:copper_ore"
+              }
+            },
+            {
+              "target": {
+                "tag": "minecraft:deepslate_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:deepslate_copper_ore"
+              }
+            }
+          ],
+          "size": 20,
+          "discard_chance_on_air_exposure": 0.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_copper": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 25,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:bamboo_jungle",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:cherry_grove",
+        "minecraft:cold_ocean",
+        "minecraft:dark_forest",
+        "minecraft:deep_cold_ocean",
+        "minecraft:deep_dark",
+        "minecraft:deep_frozen_ocean",
+        "minecraft:deep_lukewarm_ocean",
+        "minecraft:deep_ocean",
+        "minecraft:desert",
+        "minecraft:eroded_badlands",
+        "minecraft:flower_forest",
+        "minecraft:forest",
+        "minecraft:frozen_ocean",
+        "minecraft:frozen_peaks",
+        "minecraft:frozen_river",
+        "minecraft:grove",
+        "minecraft:ice_spikes",
+        "minecraft:jagged_peaks",
+        "minecraft:jungle",
+        "minecraft:lukewarm_ocean",
+        "minecraft:lush_caves",
+        "minecraft:mangrove_swamp",
+        "minecraft:meadow",
+        "minecraft:mushroom_fields",
+        "minecraft:ocean",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:pale_garden",
+        "minecraft:plains",
+        "minecraft:river",
+        "minecraft:savanna",
+        "minecraft:savanna_plateau",
+        "minecraft:snowy_beach",
+        "minecraft:snowy_plains",
+        "minecraft:snowy_slopes",
+        "minecraft:snowy_taiga",
+        "minecraft:sparse_jungle",
+        "minecraft:stony_peaks",
+        "minecraft:stony_shore",
+        "minecraft:sunflower_plains",
+        "minecraft:swamp",
+        "minecraft:taiga",
+        "minecraft:warm_ocean",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 16,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "absolute": -16
+            },
+            "max_inclusive": {
+              "absolute": 112
+            },
+            "type": "minecraft:trapezoid"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:stone_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:copper_ore"
+              }
+            },
+            {
+              "target": {
+                "tag": "minecraft:deepslate_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:deepslate_copper_ore"
+              }
+            }
+          ],
+          "size": 10,
+          "discard_chance_on_air_exposure": 0.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_clay": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 27,
+      "biomes": [
+        "minecraft:lush_caves"
+      ],
+      "placement": [
+        {
+          "count": 46,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "above_bottom": 0
+            },
+            "max_inclusive": {
+              "absolute": 256
+            },
+            "type": "minecraft:uniform"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:base_stone_overworld",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:clay"
+              }
+            }
+          ],
+          "size": 33,
+          "discard_chance_on_air_exposure": 0.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_gold_extra": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 28,
+      "biomes": [
+        "minecraft:badlands",
+        "minecraft:eroded_badlands",
+        "minecraft:wooded_badlands"
+      ],
+      "placement": [
+        {
+          "count": 50,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "absolute": 32
+            },
+            "max_inclusive": {
+              "absolute": 256
+            },
+            "type": "minecraft:uniform"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:stone_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:gold_ore"
+              }
+            },
+            {
+              "target": {
+                "tag": "minecraft:deepslate_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:deepslate_gold_ore"
+              }
+            }
+          ],
+          "size": 9,
+          "discard_chance_on_air_exposure": 0.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_emerald": {
+      "type": "minecraft:ore",
+      "step": 6,
+      "index": 33,
+      "biomes": [
+        "minecraft:cherry_grove",
+        "minecraft:frozen_peaks",
+        "minecraft:grove",
+        "minecraft:jagged_peaks",
+        "minecraft:meadow",
+        "minecraft:snowy_slopes",
+        "minecraft:stony_peaks",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills"
+      ],
+      "placement": [
+        {
+          "count": 100,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "absolute": -16
+            },
+            "max_inclusive": {
+              "absolute": 480
+            },
+            "type": "minecraft:trapezoid"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:stone_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:emerald_ore"
+              }
+            },
+            {
+              "target": {
+                "tag": "minecraft:deepslate_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:deepslate_emerald_ore"
+              }
+            }
+          ],
+          "size": 3,
+          "discard_chance_on_air_exposure": 0.0
+        },
+        "type": "minecraft:ore"
+      }
+    },
+    "minecraft:ore_infested": {
+      "type": "minecraft:ore",
+      "step": 7,
+      "index": 4,
+      "biomes": [
+        "minecraft:cherry_grove",
+        "minecraft:frozen_peaks",
+        "minecraft:grove",
+        "minecraft:jagged_peaks",
+        "minecraft:meadow",
+        "minecraft:snowy_slopes",
+        "minecraft:stony_peaks",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_hills"
+      ],
+      "placement": [
+        {
+          "count": 14,
+          "type": "minecraft:count"
+        },
+        {
+          "type": "minecraft:in_square"
+        },
+        {
+          "height": {
+            "min_inclusive": {
+              "above_bottom": 0
+            },
+            "max_inclusive": {
+              "absolute": 63
+            },
+            "type": "minecraft:uniform"
+          },
+          "type": "minecraft:height_range"
+        },
+        {
+          "type": "minecraft:biome"
+        }
+      ],
+      "feature": {
+        "config": {
+          "targets": [
+            {
+              "target": {
+                "tag": "minecraft:stone_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Name": "minecraft:infested_stone"
+              }
+            },
+            {
+              "target": {
+                "tag": "minecraft:deepslate_ore_replaceables",
+                "predicate_type": "minecraft:tag_match"
+              },
+              "state": {
+                "Properties": {
+                  "axis": "y"
+                },
+                "Name": "minecraft:infested_deepslate"
+              }
+            }
+          ],
+          "size": 9,
+          "discard_chance_on_air_exposure": 0.0
+        },
+        "type": "minecraft:ore"
+      }
+    }
+  },
+  "structure_steps": {
+    "raw_generation": [],
+    "lakes": [],
+    "local_modifications": [],
+    "underground_structures": [
+      "minecraft:buried_treasure",
+      "minecraft:mineshaft",
+      "minecraft:mineshaft_mesa",
+      "minecraft:trail_ruins",
+      "minecraft:trial_chambers"
+    ],
+    "surface_structures": [
+      "minecraft:bastion_remnant",
+      "minecraft:desert_pyramid",
+      "minecraft:end_city",
+      "minecraft:igloo",
+      "minecraft:jungle_pyramid",
+      "minecraft:mansion",
+      "minecraft:monument",
+      "minecraft:ocean_ruin_cold",
+      "minecraft:ocean_ruin_warm",
+      "minecraft:pillager_outpost",
+      "minecraft:ruined_portal",
+      "minecraft:ruined_portal_desert",
+      "minecraft:ruined_portal_jungle",
+      "minecraft:ruined_portal_mountain",
+      "minecraft:ruined_portal_nether",
+      "minecraft:ruined_portal_ocean",
+      "minecraft:ruined_portal_swamp",
+      "minecraft:shipwreck",
+      "minecraft:shipwreck_beached",
+      "minecraft:stronghold",
+      "minecraft:swamp_hut",
+      "minecraft:village_desert",
+      "minecraft:village_plains",
+      "minecraft:village_savanna",
+      "minecraft:village_snowy",
+      "minecraft:village_taiga"
+    ],
+    "strongholds": [],
+    "underground_ores": [],
+    "underground_decoration": [
+      "minecraft:ancient_city",
+      "minecraft:fortress",
+      "minecraft:nether_fossil"
+    ],
+    "fluid_springs": [],
+    "vegetal_decoration": [],
+    "top_layer_modification": []
+  },
+  "carvers": {
+    "minecraft:cave": {
+      "type": "minecraft:cave",
+      "config": {
+        "debug_settings": {
+          "air_state": {
+            "Name": "minecraft:crimson_button",
+            "Properties": {
+              "face": "wall",
+              "facing": "north",
+              "powered": "false"
+            }
+          },
+          "barrier_state": {
+            "Name": "minecraft:glass"
+          },
+          "lava_state": {
+            "Name": "minecraft:orange_stained_glass"
+          },
+          "water_state": {
+            "Name": "minecraft:candle",
+            "Properties": {
+              "candles": "1",
+              "lit": "false",
+              "waterlogged": "false"
+            }
+          }
+        },
+        "floor_level": {
+          "type": "minecraft:uniform",
+          "max_exclusive": -0.4,
+          "min_inclusive": -1.0
+        },
+        "horizontal_radius_multiplier": {
+          "type": "minecraft:uniform",
+          "max_exclusive": 1.4,
+          "min_inclusive": 0.7
+        },
+        "lava_level": {
+          "above_bottom": 8
+        },
+        "probability": 0.15,
+        "replaceable": "#minecraft:overworld_carver_replaceables",
+        "vertical_radius_multiplier": {
+          "type": "minecraft:uniform",
+          "max_exclusive": 1.3,
+          "min_inclusive": 0.8
+        },
+        "y": {
+          "type": "minecraft:uniform",
+          "max_inclusive": {
+            "absolute": 180
+          },
+          "min_inclusive": {
+            "above_bottom": 8
+          }
+        },
+        "yScale": {
+          "type": "minecraft:uniform",
+          "max_exclusive": 0.9,
+          "min_inclusive": 0.1
+        }
+      }
+    },
+    "minecraft:cave_extra_underground": {
+      "type": "minecraft:cave",
+      "config": {
+        "debug_settings": {
+          "air_state": {
+            "Name": "minecraft:oak_button",
+            "Properties": {
+              "face": "wall",
+              "facing": "north",
+              "powered": "false"
+            }
+          },
+          "barrier_state": {
+            "Name": "minecraft:glass"
+          },
+          "lava_state": {
+            "Name": "minecraft:orange_stained_glass"
+          },
+          "water_state": {
+            "Name": "minecraft:candle",
+            "Properties": {
+              "candles": "1",
+              "lit": "false",
+              "waterlogged": "false"
+            }
+          }
+        },
+        "floor_level": {
+          "type": "minecraft:uniform",
+          "max_exclusive": -0.4,
+          "min_inclusive": -1.0
+        },
+        "horizontal_radius_multiplier": {
+          "type": "minecraft:uniform",
+          "max_exclusive": 1.4,
+          "min_inclusive": 0.7
+        },
+        "lava_level": {
+          "above_bottom": 8
+        },
+        "probability": 0.07,
+        "replaceable": "#minecraft:overworld_carver_replaceables",
+        "vertical_radius_multiplier": {
+          "type": "minecraft:uniform",
+          "max_exclusive": 1.3,
+          "min_inclusive": 0.8
+        },
+        "y": {
+          "type": "minecraft:uniform",
+          "max_inclusive": {
+            "absolute": 47
+          },
+          "min_inclusive": {
+            "above_bottom": 8
+          }
+        },
+        "yScale": {
+          "type": "minecraft:uniform",
+          "max_exclusive": 0.9,
+          "min_inclusive": 0.1
+        }
+      }
+    },
+    "minecraft:canyon": {
+      "type": "minecraft:canyon",
+      "config": {
+        "debug_settings": {
+          "air_state": {
+            "Name": "minecraft:warped_button",
+            "Properties": {
+              "face": "wall",
+              "facing": "north",
+              "powered": "false"
+            }
+          },
+          "barrier_state": {
+            "Name": "minecraft:glass"
+          },
+          "lava_state": {
+            "Name": "minecraft:orange_stained_glass"
+          },
+          "water_state": {
+            "Name": "minecraft:candle",
+            "Properties": {
+              "candles": "1",
+              "lit": "false",
+              "waterlogged": "false"
+            }
+          }
+        },
+        "lava_level": {
+          "above_bottom": 8
+        },
+        "probability": 0.01,
+        "replaceable": "#minecraft:overworld_carver_replaceables",
+        "shape": {
+          "distance_factor": {
+            "type": "minecraft:uniform",
+            "max_exclusive": 1.0,
+            "min_inclusive": 0.75
+          },
+          "horizontal_radius_factor": {
+            "type": "minecraft:uniform",
+            "max_exclusive": 1.0,
+            "min_inclusive": 0.75
+          },
+          "thickness": {
+            "type": "minecraft:trapezoid",
+            "max": 6.0,
+            "min": 0.0,
+            "plateau": 2.0
+          },
+          "vertical_radius_center_factor": 0.0,
+          "vertical_radius_default_factor": 1.0,
+          "width_smoothness": 3
+        },
+        "vertical_rotation": {
+          "type": "minecraft:uniform",
+          "max_exclusive": 0.125,
+          "min_inclusive": -0.125
+        },
+        "y": {
+          "type": "minecraft:uniform",
+          "max_inclusive": {
+            "absolute": 67
+          },
+          "min_inclusive": {
+            "absolute": 10
+          }
+        },
+        "yScale": 3.0
+      }
+    }
+  },
+  "biome_carvers": {
+    "minecraft:badlands": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:bamboo_jungle": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:beach": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:birch_forest": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:cherry_grove": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:cold_ocean": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:dark_forest": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:deep_cold_ocean": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:deep_dark": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:deep_frozen_ocean": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:deep_lukewarm_ocean": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:deep_ocean": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:desert": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:dripstone_caves": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:eroded_badlands": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:flower_forest": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:forest": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:frozen_ocean": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:frozen_peaks": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:frozen_river": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:grove": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:ice_spikes": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:jagged_peaks": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:jungle": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:lukewarm_ocean": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:lush_caves": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:mangrove_swamp": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:meadow": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:mushroom_fields": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:ocean": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:old_growth_birch_forest": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:old_growth_pine_taiga": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:old_growth_spruce_taiga": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:pale_garden": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:plains": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:river": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:savanna": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:savanna_plateau": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:snowy_beach": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:snowy_plains": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:snowy_slopes": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:snowy_taiga": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:sparse_jungle": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:stony_peaks": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:stony_shore": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:sunflower_plains": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:swamp": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:taiga": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:warm_ocean": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:windswept_forest": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:windswept_gravelly_hills": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:windswept_hills": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:windswept_savanna": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ],
+    "minecraft:wooded_badlands": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ]
+  },
+  "biome_climate": {
+    "minecraft:badlands": {
+      "temperature": 2.0,
+      "temperature_modifier": "none"
+    },
+    "minecraft:bamboo_jungle": {
+      "temperature": 0.95,
+      "temperature_modifier": "none"
+    },
+    "minecraft:beach": {
+      "temperature": 0.8,
+      "temperature_modifier": "none"
+    },
+    "minecraft:birch_forest": {
+      "temperature": 0.6,
+      "temperature_modifier": "none"
+    },
+    "minecraft:cherry_grove": {
+      "temperature": 0.5,
+      "temperature_modifier": "none"
+    },
+    "minecraft:cold_ocean": {
+      "temperature": 0.5,
+      "temperature_modifier": "none"
+    },
+    "minecraft:dark_forest": {
+      "temperature": 0.7,
+      "temperature_modifier": "none"
+    },
+    "minecraft:deep_cold_ocean": {
+      "temperature": 0.5,
+      "temperature_modifier": "none"
+    },
+    "minecraft:deep_dark": {
+      "temperature": 0.8,
+      "temperature_modifier": "none"
+    },
+    "minecraft:deep_frozen_ocean": {
+      "temperature": 0.5,
+      "temperature_modifier": "frozen"
+    },
+    "minecraft:deep_lukewarm_ocean": {
+      "temperature": 0.5,
+      "temperature_modifier": "none"
+    },
+    "minecraft:deep_ocean": {
+      "temperature": 0.5,
+      "temperature_modifier": "none"
+    },
+    "minecraft:desert": {
+      "temperature": 2.0,
+      "temperature_modifier": "none"
+    },
+    "minecraft:dripstone_caves": {
+      "temperature": 0.8,
+      "temperature_modifier": "none"
+    },
+    "minecraft:eroded_badlands": {
+      "temperature": 2.0,
+      "temperature_modifier": "none"
+    },
+    "minecraft:flower_forest": {
+      "temperature": 0.7,
+      "temperature_modifier": "none"
+    },
+    "minecraft:forest": {
+      "temperature": 0.7,
+      "temperature_modifier": "none"
+    },
+    "minecraft:frozen_ocean": {
+      "temperature": 0.0,
+      "temperature_modifier": "frozen"
+    },
+    "minecraft:frozen_peaks": {
+      "temperature": -0.7,
+      "temperature_modifier": "none"
+    },
+    "minecraft:frozen_river": {
+      "temperature": 0.0,
+      "temperature_modifier": "none"
+    },
+    "minecraft:grove": {
+      "temperature": -0.2,
+      "temperature_modifier": "none"
+    },
+    "minecraft:ice_spikes": {
+      "temperature": 0.0,
+      "temperature_modifier": "none"
+    },
+    "minecraft:jagged_peaks": {
+      "temperature": -0.7,
+      "temperature_modifier": "none"
+    },
+    "minecraft:jungle": {
+      "temperature": 0.95,
+      "temperature_modifier": "none"
+    },
+    "minecraft:lukewarm_ocean": {
+      "temperature": 0.5,
+      "temperature_modifier": "none"
+    },
+    "minecraft:lush_caves": {
+      "temperature": 0.5,
+      "temperature_modifier": "none"
+    },
+    "minecraft:mangrove_swamp": {
+      "temperature": 0.8,
+      "temperature_modifier": "none"
+    },
+    "minecraft:meadow": {
+      "temperature": 0.5,
+      "temperature_modifier": "none"
+    },
+    "minecraft:mushroom_fields": {
+      "temperature": 0.9,
+      "temperature_modifier": "none"
+    },
+    "minecraft:ocean": {
+      "temperature": 0.5,
+      "temperature_modifier": "none"
+    },
+    "minecraft:old_growth_birch_forest": {
+      "temperature": 0.6,
+      "temperature_modifier": "none"
+    },
+    "minecraft:old_growth_pine_taiga": {
+      "temperature": 0.3,
+      "temperature_modifier": "none"
+    },
+    "minecraft:old_growth_spruce_taiga": {
+      "temperature": 0.25,
+      "temperature_modifier": "none"
+    },
+    "minecraft:pale_garden": {
+      "temperature": 0.7,
+      "temperature_modifier": "none"
+    },
+    "minecraft:plains": {
+      "temperature": 0.8,
+      "temperature_modifier": "none"
+    },
+    "minecraft:river": {
+      "temperature": 0.5,
+      "temperature_modifier": "none"
+    },
+    "minecraft:savanna": {
+      "temperature": 2.0,
+      "temperature_modifier": "none"
+    },
+    "minecraft:savanna_plateau": {
+      "temperature": 2.0,
+      "temperature_modifier": "none"
+    },
+    "minecraft:snowy_beach": {
+      "temperature": 0.05,
+      "temperature_modifier": "none"
+    },
+    "minecraft:snowy_plains": {
+      "temperature": 0.0,
+      "temperature_modifier": "none"
+    },
+    "minecraft:snowy_slopes": {
+      "temperature": -0.3,
+      "temperature_modifier": "none"
+    },
+    "minecraft:snowy_taiga": {
+      "temperature": -0.5,
+      "temperature_modifier": "none"
+    },
+    "minecraft:sparse_jungle": {
+      "temperature": 0.95,
+      "temperature_modifier": "none"
+    },
+    "minecraft:stony_peaks": {
+      "temperature": 1.0,
+      "temperature_modifier": "none"
+    },
+    "minecraft:stony_shore": {
+      "temperature": 0.2,
+      "temperature_modifier": "none"
+    },
+    "minecraft:sunflower_plains": {
+      "temperature": 0.8,
+      "temperature_modifier": "none"
+    },
+    "minecraft:swamp": {
+      "temperature": 0.8,
+      "temperature_modifier": "none"
+    },
+    "minecraft:taiga": {
+      "temperature": 0.25,
+      "temperature_modifier": "none"
+    },
+    "minecraft:warm_ocean": {
+      "temperature": 0.5,
+      "temperature_modifier": "none"
+    },
+    "minecraft:windswept_forest": {
+      "temperature": 0.2,
+      "temperature_modifier": "none"
+    },
+    "minecraft:windswept_gravelly_hills": {
+      "temperature": 0.2,
+      "temperature_modifier": "none"
+    },
+    "minecraft:windswept_hills": {
+      "temperature": 0.2,
+      "temperature_modifier": "none"
+    },
+    "minecraft:windswept_savanna": {
+      "temperature": 2.0,
+      "temperature_modifier": "none"
+    },
+    "minecraft:wooded_badlands": {
+      "temperature": 2.0,
+      "temperature_modifier": "none"
+    }
+  },
+  "block_tags": {
+    "minecraft:base_stone_overworld": [
+      "minecraft:andesite",
+      "minecraft:deepslate",
+      "minecraft:diorite",
+      "minecraft:granite",
+      "minecraft:stone",
+      "minecraft:tuff"
+    ],
+    "minecraft:deepslate_ore_replaceables": [
+      "minecraft:deepslate",
+      "minecraft:tuff"
+    ],
+    "minecraft:features_cannot_replace": [
+      "minecraft:bedrock",
+      "minecraft:chest",
+      "minecraft:end_portal_frame",
+      "minecraft:reinforced_deepslate",
+      "minecraft:spawner",
+      "minecraft:trial_spawner",
+      "minecraft:vault"
+    ],
+    "minecraft:geode_invalid_blocks": [
+      "minecraft:bedrock",
+      "minecraft:blue_ice",
+      "minecraft:ice",
+      "minecraft:lava",
+      "minecraft:packed_ice",
+      "minecraft:water"
+    ],
+    "minecraft:overworld_carver_replaceables": [
+      "minecraft:andesite",
+      "minecraft:black_terracotta",
+      "minecraft:blue_terracotta",
+      "minecraft:brown_terracotta",
+      "minecraft:calcite",
+      "minecraft:coarse_dirt",
+      "minecraft:copper_ore",
+      "minecraft:cyan_terracotta",
+      "minecraft:deepslate",
+      "minecraft:deepslate_copper_ore",
+      "minecraft:deepslate_iron_ore",
+      "minecraft:diorite",
+      "minecraft:dirt",
+      "minecraft:granite",
+      "minecraft:grass_block",
+      "minecraft:gravel",
+      "minecraft:gray_terracotta",
+      "minecraft:green_terracotta",
+      "minecraft:iron_ore",
+      "minecraft:light_blue_terracotta",
+      "minecraft:light_gray_terracotta",
+      "minecraft:lime_terracotta",
+      "minecraft:magenta_terracotta",
+      "minecraft:moss_block",
+      "minecraft:mud",
+      "minecraft:muddy_mangrove_roots",
+      "minecraft:mycelium",
+      "minecraft:orange_terracotta",
+      "minecraft:packed_ice",
+      "minecraft:pale_moss_block",
+      "minecraft:pink_terracotta",
+      "minecraft:podzol",
+      "minecraft:powder_snow",
+      "minecraft:purple_terracotta",
+      "minecraft:raw_copper_block",
+      "minecraft:raw_iron_block",
+      "minecraft:red_sand",
+      "minecraft:red_sandstone",
+      "minecraft:red_terracotta",
+      "minecraft:rooted_dirt",
+      "minecraft:sand",
+      "minecraft:sandstone",
+      "minecraft:snow",
+      "minecraft:snow_block",
+      "minecraft:stone",
+      "minecraft:suspicious_gravel",
+      "minecraft:suspicious_sand",
+      "minecraft:terracotta",
+      "minecraft:tuff",
+      "minecraft:water",
+      "minecraft:white_terracotta",
+      "minecraft:yellow_terracotta"
+    ],
+    "minecraft:stone_ore_replaceables": [
+      "minecraft:andesite",
+      "minecraft:diorite",
+      "minecraft:granite",
+      "minecraft:stone"
+    ]
+  },
+  "blocks": {
+    "minecraft:air": {
+      "air": true,
+      "solid": false,
+      "blocks_motion": false,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:amethyst_block": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:amethyst_cluster": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:andesite": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:bedrock": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:black_terracotta": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:blue_ice": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:blue_terracotta": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:brown_terracotta": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:budding_amethyst": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:calcite": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:cave_air": {
+      "air": true,
+      "solid": false,
+      "blocks_motion": false,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:chest": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:clay": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:coal_ore": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:coarse_dirt": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:cobblestone": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:copper_ore": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:cyan_terracotta": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:deepslate": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:deepslate_coal_ore": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:deepslate_copper_ore": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:deepslate_diamond_ore": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:deepslate_emerald_ore": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:deepslate_gold_ore": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:deepslate_iron_ore": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:deepslate_lapis_ore": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:deepslate_redstone_ore": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:diamond_ore": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:diorite": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:dirt": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:emerald_ore": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:end_portal_frame": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:gold_ore": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:granite": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:grass_block": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:gravel": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:gray_terracotta": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:green_terracotta": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:ice": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:infested_deepslate": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:infested_stone": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:iron_ore": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:lapis_ore": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:large_amethyst_bud": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:lava": {
+      "air": false,
+      "solid": false,
+      "blocks_motion": false,
+      "fluid": "minecraft:lava",
+      "fluid_source": true
+    },
+    "minecraft:light_blue_terracotta": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:light_gray_terracotta": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:lime_terracotta": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:magenta_terracotta": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:medium_amethyst_bud": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:moss_block": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:mossy_cobblestone": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:mud": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:muddy_mangrove_roots": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:mycelium": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:orange_terracotta": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:packed_ice": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:pale_moss_block": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:pink_terracotta": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:podzol": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:powder_snow": {
+      "air": false,
+      "solid": false,
+      "blocks_motion": false,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:purple_terracotta": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:raw_copper_block": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:raw_iron_block": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:red_sand": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:red_sandstone": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:red_terracotta": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:redstone_ore": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:reinforced_deepslate": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:rooted_dirt": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:sand": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:sandstone": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:small_amethyst_bud": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:smooth_basalt": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:snow": {
+      "air": false,
+      "solid": false,
+      "blocks_motion": false,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:snow_block": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:spawner": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:stone": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:suspicious_gravel": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:suspicious_sand": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:terracotta": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:trial_spawner": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:tuff": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:vault": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:void_air": {
+      "air": true,
+      "solid": false,
+      "blocks_motion": false,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:water": {
+      "air": false,
+      "solid": false,
+      "blocks_motion": false,
+      "fluid": "minecraft:water",
+      "fluid_source": true
+    },
+    "minecraft:white_terracotta": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    },
+    "minecraft:yellow_terracotta": {
+      "air": false,
+      "solid": true,
+      "blocks_motion": true,
+      "fluid": "",
+      "fluid_source": false
+    }
+  }
+}

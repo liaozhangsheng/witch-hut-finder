@@ -1,0 +1,99 @@
+name: Build
+
+on:
+  push:
+    branches: [main, master]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Fully static, so the binary runs on any x86_64 Linux regardless of its glibc.
+          - name: linux-x86_64
+            os: ubuntu-24.04
+            archive: tar.gz
+            configure: >-
+              -DCMAKE_CXX_COMPILER=g++-14
+              -DCMAKE_EXE_LINKER_FLAGS=-static
+          # One universal binary for Apple silicon and Intel; std::format needs macOS 13.3.
+          - name: macos-universal
+            os: macos-latest
+            archive: tar.gz
+            configure: >-
+              "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64"
+              -DCMAKE_OSX_DEPLOYMENT_TARGET=13.3
+          # The static MSVC runtime spares users the Visual C++ redistributable. The policy default carries it into
+          # the submodules, whose older cmake_minimum_required would otherwise keep the DLL runtime.
+          - name: windows-x86_64
+            os: windows-latest
+            archive: zip
+            configure: >-
+              -DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThreaded
+              -DCMAKE_POLICY_DEFAULT_CMP0091=NEW
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Configure
+        shell: bash
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release ${{ matrix.configure }}
+
+      - name: Build
+        shell: bash
+        run: cmake --build build --config Release --target witch_hut_finder --parallel
+
+      - name: Package
+        id: package
+        shell: bash
+        run: |
+          if [[ "$GITHUB_REF" == refs/tags/* ]]; then version="$GITHUB_REF_NAME"; else version="${GITHUB_SHA::7}"; fi
+          name="witch_hut_finder-$version-${{ matrix.name }}"
+          mkdir -p "dist/$name"
+          # Multi-config generators (Visual Studio) put the binary under a Release subdirectory.
+          binary=$(find build/bin -type f \( -name witch_hut_finder -o -name witch_hut_finder.exe \) | head -n 1)
+          cp "$binary" README.md LICENSE "dist/$name/"
+          cd dist
+          if [[ "${{ matrix.archive }}" == zip ]]; then
+            cmake -E tar cf "$name.zip" --format=zip "$name"
+          else
+            cmake -E tar czf "$name.tar.gz" "$name"
+          fi
+          echo "file=dist/$name.${{ matrix.archive }}" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.name }}
+          path: ${{ steps.package.outputs.file }}
+          if-no-files-found: error
+
+  release:
+    name: Release
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd dist
+          sha256sum * > SHA256SUMS.txt
+          gh release create "$GITHUB_REF_NAME" * --repo "$GITHUB_REPOSITORY" --title "$GITHUB_REF_NAME" --generate-notes --verify-tag
